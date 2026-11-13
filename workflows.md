@@ -203,13 +203,13 @@ on:
 jobs:
   r-cmd:
     name: R CMD Check 🧬
-    uses: insightsengineering/r.pkg.template/.github/workflows/build-check-install.yaml@main
+    uses: insightsengineering/Coursera.cicd.lab/.github/workflows/build-check-install.yaml@main
     with:
       unit-test-report-brand: >-
         https://github.com/insightsengineering/hex-stickers/raw/main/thumbs/tern.png
   coverage:
     name: Coverage 📔
-    uses: insightsengineering/r.pkg.template/.github/workflows/test-coverage.yaml@main
+    uses: insightsengineering/Coursera.cicd.lab/.github/workflows/test-coverage.yaml@main
 ```
 
 Example configuration for tags:
@@ -224,18 +224,18 @@ jobs:
   build:
     name: Build package 🎁
     needs: [release, docs]
-    uses: insightsengineering/r.pkg.template/.github/workflows/build-check-install.yaml@main
+    uses: insightsengineering/Coursera.cicd.lab/.github/workflows/build-check-install.yaml@main
     with:
       unit-test-report-brand: >-
         https://github.com/insightsengineering/hex-stickers/raw/main/thumbs/tern.png
   coverage:
     name: Coverage 📔
     needs: [release, docs]
-    uses: insightsengineering/r.pkg.template/.github/workflows/test-coverage.yaml@main
+    uses: insightsengineering/Coursera.cicd.lab/.github/workflows/test-coverage.yaml@main
   docs:
     name: Pkgdown Docs 📚
     needs: release
-    uses: insightsengineering/r.pkg.template/.github/workflows/pkgdown.yaml@main
+    uses: insightsengineering/Coursera.cicd.lab/.github/workflows/pkgdown.yaml@main
 ```
 
 ## [`rhub.yaml`](./.github/workflows/rhub.yaml)
